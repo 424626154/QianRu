@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>潜入敌后</title>
+    <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+</head>
+<body style="padding:0; margin: 0; background: #000;">
+<canvas id="gameCanvas" width="480" height="800"></canvas>
+<script type="text/javascript" src="WeixinApi.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?91f4361e83cf34ffe3b6dd0471ee205a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+
+        window.wxData = {
+            "appId": "wx7bf07fe12a11df59", // 服务号可以填写appId
+            "imgUrl":'http://baoguangguang.cn/game/mmqianru/res/icon.png',
+            "link":'http://baoguangguang.cn/game/mmqianru/',
+            "desc":"潜入敌后，为了荣誉而战～",
+            "title":"潜入敌后"
+        };
+        window.wxFriend = {
+            "appId": "wx7bf07fe12a11df59", // 服务号可以填写appId
+            "imgUrl":'http://baoguangguang.cn/game/mmqianru/res/icon.png',
+            "link":'http://baoguangguang.cn/game/mmqianru/',
+            "desc":"潜入敌后，为了荣誉而战～",
+            "title":"潜入敌后"
+        };
+        WeixinApi.ready(function(Api) {
+            var wxCallbacks = {
+                ready : function() {
+                },
+                cancel : function(resp) {
+                },
+                fail : function(resp) {
+                },
+                confirm : function(resp) {
+                },
+                all : function(resp) {
+                }
+            };
+            Api.shareToFriend(wxFriend, wxCallbacks);
+            Api.shareToTimeline(wxData, wxCallbacks);
+            Api.shareToWeibo(wxData, wxCallbacks);
+        });
+    </script>
+
+<script src="frameworks/cocos2d-html5/CCBoot.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
